@@ -1,0 +1,46 @@
+<h1><%= title %></h1>
+<p>Welcome to <%= title %></p>
+
+<form action="/" method="post">
+  <div>
+    <label for="kind">Tipo</label>
+    <input type="text" id="kind" name="kind">
+  </div>
+  <div>
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="name">
+  </div>
+  <div>
+    <label for="description">Descripcion</label>
+    <input type="text" id="description" name="description">
+  </div>
+  <div>
+    <label for="lat">Latitud</label>
+    <input type="text" id="lat" name="lat">
+  </div>
+  <div>
+    <label for="lng">Longitud</label>
+    <input type="text" id="lng" name="lng">
+  </div>
+  <button>Crear</button>
+</form>
+
+<div id="map"></div>
+
+<ul>
+  <% places.forEach((place) => {%>
+    <li>
+      <%= place.name %> - <%= place.description %>
+    </li>
+  <% })%>
+</ul>
+
+
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7QGWvoGR_khK0QwP99KY3yE-RtYlMITQ">
+ </script>
+ <script>
+  var myPlace = <%-JSON.stringify( places )%>
+ </script>
+  <script src="javascripts/main.js"></script>
+
+ </script>
